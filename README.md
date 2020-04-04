@@ -22,7 +22,7 @@ It is widely applied in  medical diagnostics
 
 
 ![alt text](
-https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumbnails/nmr.JPG "IPK")
+blob/thumbnails/nmr.JPG "IPK")
 
 
 
@@ -34,7 +34,7 @@ The aim of our project: to develop a model that will automatically recognize on 
 
 
 ![alt text](
-https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumbnails/kernel.JPG "kernel")
+blob/thumbnails/kernel.JPG "kernel")
 
 
 ### Data:
@@ -42,7 +42,7 @@ https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumb
 - abt. 10% of these slices are empty and should be discarded. We can apply data augmentation using free scan processing software (Fiji) and open-source Python code.
 
 ![alt text](
-https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumbnails/data.JPG "data")
+blob/thumbnails/data.JPG "data")
 
 
 
@@ -51,7 +51,7 @@ It refers to the process of linking each pixel in an image to a class label.
 And could be described as "image classification at a pixel level".
 
 ![alt text](
-https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumbnails/segmentation.JPG "segmentation")
+blob/thumbnails/segmentation.JPG "segmentation")
 
 
 
@@ -59,14 +59,14 @@ https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumb
 U-net - a convolutional neural network that was initially developed for biomedical image segmentation. 
 Then it found wide application due to the ability to make the most use out of limited data.
 ![alt text](
-https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumbnails/unet.JPG "U-Net")
+blob/thumbnails/unet.JPG "U-Net")
 
 
 ### Achievements so far
 Using the ready-to-use open-source vgg-unet model (wrapper over Keras framework) with a minimal set of slices (not augmented)
 https://colab.research.google.com/drive/1H0iymWw2u7rGHLKoAjIJa-yQ7qDRlfCp 
 ![alt text](
-https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumbnails/first_shot.JPG "achivements")
+blob/thumbnails/first_shot.JPG "achivements")
 
 
 
