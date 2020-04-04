@@ -10,7 +10,7 @@
 One of the world's leading international institutions in the field of plant genetics and crop science.  
 They conduct researches into the genetic and molecular basis of the traits important for crop productivity.
 ![alt text](
-https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumbnails/ipk.JPG "IPK")
+blob/thumbnails/ipk.JPG "IPK")
 
 
 They apply 3D scanning of wheat kernels using Nuclear Magnetic Resonance (NMR).
@@ -48,7 +48,8 @@ https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumb
 
 Technology used: semantic segmentation.
 It refers to the process of linking each pixel in an image to a class label.
-And could be described as “image classification at a pixel level”.
+And could be described as "image classification at a pixel level".
+
 ![alt text](
 https://raw.githubusercontent.com/akvilonBrown/nmr-bio-imaging/master/blob/thumbnails/segmentation.JPG "segmentation")
 
