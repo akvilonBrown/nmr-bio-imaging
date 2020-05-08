@@ -1,0 +1,39 @@
+1. Open terminal and go to the 'Installation' folder.
+
+2. Please run 'sudo chmod +x CheckInstallations.sh' command to make
+   it executable and provide the admin password.
+
+3. Please run 'sudo chmod +x InstallDependentModules.sh' command to make
+   it executable and provide the admin password.
+
+4. Please run from the terminal './CheckInstallations.sh' and check
+
+   if Python3 version more that 3.7 installed as well as related modules.
+   if Python3 not installed, please use command - 
+                   sudo apt-get install python3.7
+                   sudo apt-get install python3-tk (UI related modules!! )
+   if pip3 version > 19.0 not installed please use command -     
+                                  sudo apt install python3-pip
+                                  sudo -H pip3 install --upgrade pip (we should have latest version of pip > 19.0 to install tensorflow !!)
+   
+
+
+5. If some of the modules are missed please run from the terminal './InstallDependentModules.sh'
+    and after, please run instruction #4 to check that all dependencies are present.
+
+6. Please go to the 'Program' folder.
+
+7. Please run 'sudo chmod +x runProgram.sh' command to make
+   it executable and provide the admin password.
+
+8. Run the command ./runProgram.sh "SOURCE_FOLDER" "RESULT_FOLDER"
+   where SOURCE_FOLDER - path to the source folder with files
+         RESULT_FOLDER - path to the folder where result will be stored.
+   For example:
+   ./runProgram.sh "/Users/dbabchuk/Downloads/test_big" "/Users/dbabchuk/Documents/ML_Project_Installation_Details/Result"
+
+9. Please run 'sudo chmod +x runGUIProgram.sh' command to make
+      it executable and provide the admin password.
+
+10. For running the GUI program which allow us to select source and destination folders please
+    run the command ./runGUIProgram.sh

@@ -2,10 +2,12 @@ import os
 import cv2
 import numpy as np
 
-pred_folder = "E:/Projects/NMR/grandset/big_data/test_results/FINAL/test_results_70_epochs"
+#pred_folder = "E:/Docs/Downloads/datasets/junk/predicted/predicted1_1"
+pred_folder = "E:/Projects/NMR/grandset/big_data/test_results/FINAL/test_results_extra_training"
 true_folder = "E:/Projects/NMR/grandset/big_data/test/label"
+#true_folder = "E:/Docs/Downloads/datasets/junk/predicted/test_label"
 
-target_shape = (480,160)
+target_shape = (160,480)
 
 def to_precategorical5(mask):
     #this map is how cv2 converts colored images into grayscale pixels
@@ -127,9 +129,12 @@ dice = dice_score_total(true_img, predicted_img)
 print("-------------")
 print("-------------")
 
+'''
 for i in range(len(true_img)):
   sc = iou_score_single (true_img[i], predicted_img[i])
   dice = dice_score_single(true_img[i], predicted_img[i])
   print(f"Image {str(i).zfill(5)}, total IoU: {round(sc[~np.isnan(sc)].mean(), 4)}, total dice: {round(dice[~np.isnan(dice)].mean(), 4)}")
   for i in range(5):
      print(f"    Class{i} IoU score {round(sc[i], 4)}           dice score {round(dice[i], 4)}")
+'''
+   

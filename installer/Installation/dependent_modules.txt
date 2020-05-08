@@ -1,0 +1,6 @@
+pandas
+Keras
+tensorflow
+opencv-python
+setuptools
+scikit-image
