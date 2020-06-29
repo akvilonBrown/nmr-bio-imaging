@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Grain structure</title>
+    <meta name="description" content="Grain structure recognition" />
+    <meta
+      name="keywords"
+      content="Machine LEarning, Grain Structure, Semantic Segmentation, NMR"
+    />
+    <meta name="author" content="Iaroslav Plutenko" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/static/styles/styles.css" />
+    <link
+      rel="icon"
+      href="https://www.ipk-gatersleben.de/fileadmin/template/main/images-ipk/ipklogo.png"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <img
+      src="https://www.ipk-gatersleben.de/fileadmin/template/main/images-ipk/ipklogo.png"
+      alt="IPK Logo"
+    />
+    <form
+      action="/uploader"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <input type = "file" name = "file" />
+      <p>Drag your file here or click in this area.</p>
+      <button type="submit">Upload</button>
+    </form>
+    <img src="/static/images/hand.PNG" alt="Hand" class="hand" />
+    <img src="/static/images/dna.PNG" alt="DNA" class="dna" />
+    <img src="/static/images/structure.PNG" alt="Sctructure" class="structure" />
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>
