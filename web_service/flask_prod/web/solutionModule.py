@@ -40,22 +40,6 @@ def testGenerator(test_path,num_image = 30, resize = False, target_size = INPUT_
         yield img
 
 
-def saveResult(save_dir,results, num_class = 5):
-    rshape = results.shape
-    batch = np.reshape(results, (rshape[0] * rshape[1] * rshape[2], num_class))
-    new_batch = np.zeros(batch.shape[0])
-
-    for i in range (batch.shape[0]):
-        new_batch[i] = GRAY_DICT[np.argmax(batch[i, :])]
-
-    new_batch = np.reshape(new_batch, (rshape[0], rshape[1], rshape[2]), 'C');
-
-    for i in range(new_batch.shape[0]):
-      img = new_batch[i]
-      fl = os.path.join(save_dir, str(i)+".bmp")
-      cv2.imwrite(fl, img)
-    print(f"Results saved to folder {save_dir}")
-
 def saveResultColored(save_dir, results, num_class = 5):
     background = np.array([0,0,0])
     class1 = np.array([0,102,153])
