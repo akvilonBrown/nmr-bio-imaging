@@ -130,7 +130,9 @@ def download_file():
 @app.route('/return-files/<filename>')
 def return_files_tut(filename):
     #file_path = UPLOAD_FOLDER + filename
-    return send_file(RESULT_FILE, as_attachment=True, attachment_filename='')
+    dest = os.path.join(UPLOAD_FOLDER, 'result_' + str(uuid.uuid4())+.'zip')
+    os.rename(RESULT_FILE, dst)       
+    return send_file(dst, as_attachment=True, attachment_filename='')
 
 
 	
