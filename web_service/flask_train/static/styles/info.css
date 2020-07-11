@@ -51,3 +51,21 @@ a:hover.home,
 a:active.home {
   background-color: RoyalBlue;
 }
+
+a:link.model,
+a:visited.model {
+  background-color: DodgerBlue;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  left: 380px;
+}
+
+a:hover.model,
+a:active.model {
+  background-color: RoyalBlue;
+}
