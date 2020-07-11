@@ -109,3 +109,29 @@ form button:active {
     transform: rotate(360deg);
   }
 }
+
+.title {
+  display: block;
+  margin: auto;
+  width: fit-content;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+a:link.home,
+a:visited.home {
+  background-color: DodgerBlue;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  left: 240px;
+}
+
+a:hover.home,
+a:active.home {
+  background-color: RoyalBlue;
+}

@@ -9,23 +9,11 @@ import skimage.transform as trans
 import cv2
 from keras.models import load_model
 
-BATCH_SIZE = 2
-NUM_CLASSES=5
-
-background = 0
-class1 = 105 #77
-class2 = 176  #129
-class3 = 222 #177
-class4 = 255
-
 # sometimes ImageGeneratro converts colored mask into grayscale pixels differently - for example 105 or 106, or 222/223
 class1ext = 106
 class3ext = 223
 
 INPUT_SIZE = (160,480)
-# Grayscale dictionary to convert mask image into one-hot encoded 5-class label (and back if required).
-# Colored mask becomes graysclale when opened in respective mode
-GRAY_DICT = np.array([background, class1, class2, class3, class4, class1ext, class3ext])
 
 def testGenerator(test_path,num_image = 30, resize = False, target_size = INPUT_SIZE):
     files = os.listdir(test_path)
@@ -60,15 +48,16 @@ def saveResultColored(save_dir, results, num_class = 5):
 
     for i in range(new_batch.shape[0]):
       img = new_batch[i]
-      fl = os.path.join(save_dir, str(i)+".bmp")
+      fl = os.path.join(save_dir, str(i).zfill(5) +".bmp")      
       cv2.imwrite(fl, img)
     print(f"Results saved to folder {save_dir}")
 
 
-def runModel(source_folder, destination_folder):
+def runModel(source_folder, destination_folder, model_path):
     test_size = len(os.listdir(source_folder))    
     #test_size = 10
     testGene = testGenerator(source_folder, num_image = test_size, resize=True, target_size = INPUT_SIZE)
-    model = load_model('./model_full_saved.hd')
+    model = load_model(model_path)
     results = model.predict_generator(testGene, test_size, verbose=1)
+    print(type(results))
     saveResultColored(destination_folder, results)
