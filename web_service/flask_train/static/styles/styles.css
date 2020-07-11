@@ -109,3 +109,11 @@ form button:active {
     transform: rotate(360deg);
   }
 }
+
+.title {
+  display: block;
+  margin: auto;
+  width: fit-content;
+  font-size: 42px;
+  font-weight: bold;
+}
