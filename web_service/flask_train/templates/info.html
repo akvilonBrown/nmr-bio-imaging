@@ -20,17 +20,23 @@
       rel="icon"
       href="https://www.ipk-gatersleben.de/fileadmin/template/main/images-ipk/ipklogo.png"
     />
-    <link rel="stylesheet" href="/static/styles/download.css" />
+    <link rel="stylesheet" href="/static/styles/info.css" />
   </head>
   <body>
-    <h1 class="title">You can download results!</h1>
+    <div>
+      <h1 class="title">
+        Information
+      </h1>
+    </div>
+    <a class="home" href="/" target="_self">Home Page</a>
+    <div class="message">
+      <i>
+        Not a valid archive. Please upload valid zip archive with images.
+      </i>
+    </div>
     <img
       src="https://www.ipk-gatersleben.de/fileadmin/template/main/images-ipk/ipklogo.png"
       alt="IPK Logo"
     />
-    <a class="home" href="/" target="_self">Home Page</a>
-    <a href="/return-files/{{value}}" target="blank"
-      ><button class="fa fa-download btn">Download</button></a
-    >
   </body>
 </html>
