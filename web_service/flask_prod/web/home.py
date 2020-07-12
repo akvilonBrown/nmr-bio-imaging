@@ -64,9 +64,11 @@ def unlock():
 def upload_file2():
    if request.method == 'POST':
       try: 
-          if  not os.path.exists(app.config['ML_MODEL']):           
+          lst = [i for i in os.listdir(UPLOAD_FOLDER) if (i.endswith('.hd') or i.endswith('.hdf5'))]
+          if len(lst) == 0:
               return  render_template('info.html', message = 'ML Model is lost on server') 
-      
+          app.config['ML_MODEL'] =  os.path.join(app.config['UPLOAD_FOLDER'], lst[0])
+          
           f = request.files['file']
           if (f.filename == ''):
               return  render_template('info.html', message = 'Empty file. Please upload valid zip archive with images') 
@@ -148,11 +150,17 @@ def uploader_model():
               return  render_template('info.html', message = 'Not a valid file extention, expected .hd or .hdf5' ) 
 
           saved_path = os.path.join(app.config['UPLOAD_FOLDER'], f.filename)
-          if (saved_path == app.config['ML_MODEL'] ):
+          previous_model = '0'
+          
+          lst = [i for i in os.listdir(UPLOAD_FOLDER) if (i.endswith('.hd') or i.endswith('.hdf5'))]
+          if len(lst) > 0:
+              previous_model = os.path.join(app.config['UPLOAD_FOLDER'], lst[0])           
+          
+          if (saved_path == previous_model):
               return  render_template('info.html', message = 'Model with such name already exists. New model should have different name') 
           
           f.save(saved_path)
-          previous_model = app.config['ML_MODEL'] 
+          
           try:
               model = load_model(saved_path)
           except:
@@ -160,7 +168,8 @@ def uploader_model():
               return render_template('info.html', message = 'Model is not valid')    
 
           app.config['ML_MODEL'] = saved_path
-          os.remove(previous_model)
+          if not previous_model == '0' :
+              os.remove(previous_model)
           
           return  render_template('info.html', message = 'Model successfully updated')    
       except:          
